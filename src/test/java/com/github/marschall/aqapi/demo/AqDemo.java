@@ -23,17 +23,17 @@ public class AqDemo {
   public static void main(String[] args) throws JMSException {
     QueueConnectionFactory queuConnectionFactory = AQjmsFactory.getQueueConnectionFactory(dataSource());
 
-    QueueConnection connection = queuConnectionFactory.createQueueConnection();
-    QueueSession session = connection.createQueueSession(true,
-            Session.CLIENT_ACKNOWLEDGE);
-    Queue queue = ((AQjmsSession) session).getQueue("jdbc", "forum_post_queue");
-    QueueReceiver receiver = session.createReceiver(queue);
-    connection.start();
-    Message message = receiver.receiveNoWait();
-    AdtMessage adtMessage = (AdtMessage) message;
-    Object payload = adtMessage.getAdtPayload();
-    session.commit();
-    connection.stop();
+    try (QueueConnection connection = queuConnectionFactory.createQueueConnection();
+         QueueSession session = connection.createQueueSession(true, Session.CLIENT_ACKNOWLEDGE))  {
+      Queue queue = ((AQjmsSession) session).getQueue("jdbc", "forum_post_queue");
+      QueueReceiver receiver = session.createReceiver(queue);
+      connection.start();
+      Message message = receiver.receiveNoWait();
+      AdtMessage adtMessage = (AdtMessage) message;
+      Object payload = adtMessage.getAdtPayload();
+      session.commit();
+      connection.stop();
+    }
   }
 
   private static DataSource dataSource() {
