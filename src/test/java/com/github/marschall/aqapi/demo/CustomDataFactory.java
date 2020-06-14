@@ -2,6 +2,7 @@ package com.github.marschall.aqapi.demo;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Struct;
 
 import oracle.sql.Datum;
 import oracle.sql.ORAData;
@@ -15,6 +16,9 @@ final class CustomDataFactory implements ORADataFactory {
 
   @Override
   public ORAData create(Datum datum, int sqlType) throws SQLException {
+    if (datum instanceof Struct) {
+      Struct struct = (Struct) datum;
+    }
     return new ORADataImpl(datum);
   }
 
