@@ -1,0 +1,13 @@
+
+Links
+https://docs.oracle.com/cd/B28359_01/java.111/b31224/streamsaq.htm
+https://www.akadia.com/services/ora_advanced_queueing.html
+
+https://docs.oracle.com/database/121/ARPLS/d_aqadm.htm#ARPLS106
+https://docs.oracle.com/cd/B28359_01/java.111/b31224/streamsaq.htm
+https://www.akadia.com/services/ora_advanced_queueing.html
+
+
+AQAPI Javadoc
+https://docs.oracle.com/en/database/oracle/oracle-database/19/jajms/index.html
+https://docs.oracle.com/en/database/oracle/oracle-database/19/jajdb/

@@ -1,0 +1,13 @@
+
+
+DBMS_AQ.JMS_TEXT_MESSAGE
+DBMS_AQ.JMS_OBJECT_MESSAGE
+DBMS_AQ.JMS_MAP_MESSAGE
+DBMS_AQ.JMS_BYTES_MESSAGE
+DBMS_AQ.JMS_STREAM_MESSAGE
+
+
+StructDatum Mapper
+
+https://docs.spring.io/spring-data/jdbc/old-docs/1.2.1.RELEASE/reference/html/orcl.streamsaq.html
+https://github.com/spring-projects/spring-data-jdbc-ext/blob/master/spring-data-oracle/src/main/java/org/springframework/data/jdbc/jms/support/oracle/StructDatumMapper.java
