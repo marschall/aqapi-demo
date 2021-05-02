@@ -42,14 +42,28 @@
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.6.1</version>
+        <version>5.7.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-framework-bom</artifactId>
-        <version>5.2.5.RELEASE</version>
+        <version>5.3.6</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-bom</artifactId>
+        <version>2.14.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.oracle.database.jdbc</groupId>
+        <artifactId>ojdbc-bom</artifactId>
+        <version>21.1.0.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -75,35 +89,8 @@
     <!-- database drivers -->
     <dependency>
       <groupId>com.oracle.database.jdbc</groupId>
-      <artifactId>ojdbc10</artifactId>
-      <version>19.6.0.0</version>
+      <artifactId>ojdbc11</artifactId>
       <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>com.oracle.database.jdbc</groupId>
-          <artifactId>ucp</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.oracle.database.ha</groupId>
-          <artifactId>ons</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.oracle.database.security</groupId>
-          <artifactId>osdt_cert</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.oracle.database.security</groupId>
-          <artifactId>oraclepki</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.oracle.database.security</groupId>
-          <artifactId>osdt_core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.oracle.database.ha</groupId>
-          <artifactId>simplefan</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.oracle.database.messaging</groupId>
@@ -120,19 +107,16 @@
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
-      <version>${log4j.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
-      <version>${log4j.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-jcl</artifactId>
-      <version>${log4j.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -280,7 +264,6 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <log4j.version>2.13.3</log4j.version>
   </properties>
 
 </project>
